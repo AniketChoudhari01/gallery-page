@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            background-color: black;
+            height: 100vh;
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: scaleFade 0.5s ease-out forwards;
+        }
+
+        .item1 {
+            background-image: url('item1.png');
+            animation-delay: 0.1s;
+        }
+
+        .item2 {
+            background-image: url('item2.png');
+            animation-delay: 0.2s;
+        }
+
+        .item3 {
+            background-image: url('item3.png');
+            animation-delay: 0.3s;
+        }
+
+        .item4 {
+            background-image: url('item4.png');
+            animation-delay: 0.4s;
+        }
+
+        .item5 {
+            background-image: url('item5.png');
+            animation-delay: 0.5s;
+        }
+
+        .item6 {
+            background-image: url('item6.png');
+            animation-delay: 0.6s;
+        }
+
+        .item7 {
+            background-image: url('item7.png');
+            animation-delay: 0.7s;
+        }
+
+        .gallery-img,
+        .text-img,
+        .submenu {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes scaleFade {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Desktop layout */
+        @media screen and (min-width: 769px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .item1 {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .item2 {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .item3 {
+                grid-column: 3 / span 2;
+                grid-row: 1;
+            }
+
+            .item4 {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .item5 {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .item6 {
+                grid-column: 3;
+                grid-row: 2;
+            }
+
+            .item7 {
+                grid-column: 4;
+                grid-row: 2;
+            }
+
+            .gallery-img {
+                margin: 10% auto auto 7%;
+            }
+
+            .text-img {
+                margin-top: 3%;
+                margin-left: 7%;
+            }
+
+            .submenu {
+                margin: 8% auto 8% 7%;
+            }
+        }
+
+        /* Tablet and mobile layout (768px and below) */
+        @media screen and (max-width: 768px) {
+
+            /* Grid container setup */
+            .grid-container {
+                display: grid;
+                gap: 10px;
+                background-color: #000000;
+                padding: 10px;
+                grid-template-columns: repeat(4, 1fr);
+                /* 4 columns on large screens */
+                height: 100vh;
+            }
+
+            /* General styling for grid items */
+            .grid-item {
+                text-align: center;
+                padding: 20px;
+                font-size: 30px;
+                background-size: cover;
+                background-position: center;
+                object-fit: cover;
+                height: 100%;
+                /* Adjust to fit without overflow */
+            }
+
+            .item1 {
+                grid-column: 1 / span 2;
+                /* Span across 2 columns */
+                grid-row: 1/span 2;
+            }
+
+            .item2 {
+                grid-column: 3 / span 2;
+                grid-row: 1/ span 2;
+            }
+
+            .item3 {
+                grid-column: 3 / span 2;
+                grid-row: 3 / span 2;
+            }
+
+            .item4 {
+                grid-column: 1;
+                grid-row: 3 / span 2;
+                grid-row: 3/ span 4;
+            }
+
+            .item5 {
+                grid-column: 2;
+                grid-row: 3 / span 2;
+                grid-row: 3/ span 4;
+            }
+
+            .item6 {
+                grid-column: 1 / span 2;
+                grid-row: 5/ span 2;
+            }
+
+            .item7 {
+                grid-column: 3 / span 2;
+                grid-row: 5/ span 2;
+            }
+
+            .gallery-img,
+            .text-img,
+            .submenu {
+                max-width: 90%;
+                margin: 10px auto;
+            }
+
+            .gallery-img {
+                height: 40%;
+            }
+
+            .text-img {
+                height: 10%;
+            }
+
+            .submenu {
+                width: 50%;
+            }
+        }
+
+        /* Further adjustments for very small screens */
+        /* @media screen and (max-width: 480px) {
+            .grid-item {
+                height: 20vh;
+            }
+
+            .item3 {
+                height: 40vh;
+            }
+
+            .gallery-img { height: 30%; }
+            .text-img { height: 8%; }
+            .submenu { width: 60%; }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1"></div>
+        <div class="grid-item item2"></div>
+        <div class="grid-item item3">
+            <img class="gallery-img" src="Gallery.png" alt="Gallery-img">
+            <img class="text-img" src="qazwsxedcrfvtgbyhnujmikolp1234567890.png" alt="text">
+            <img class="submenu" src="submenu.png" alt="submenu">
+        </div>
+        <div class="grid-item item4"></div>
+        <div class="grid-item item5"></div>
+        <div class="grid-item item6"></div>
+        <div class="grid-item item7"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+      /* Grid container setup */
+      .grid-container {
+        display: grid;
+        gap: 10px;
+        background-color: #000000;
+        padding: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns on large screens */
+        height: 100vh;
+      }
+
+      /* General styling for grid items */
+      .grid-item {
+        text-align: center;
+        padding: 20px;
+        font-size: 30px;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+        height: 100%;
+        /* Adjust to fit without overflow */
+      }
+
+      /* Centering the gallery image */
+      .gallery-img {
+        max-width: 90%;
+        /* Adjust as needed */
+        max-height: 80%;
+        /* Adjust as needed to fit within the grid item */
+        display: block;
+      }
+
+      /* Centering the text image */
+      .text-img {
+        max-width: 90%;
+        /* Adjust as needed */
+        max-height: 80%;
+        /* Adjust as needed to fit within the grid item */
+        display: block;
+      }
+
+      /* Centering the submenu image */
+      .submenu {
+        max-width: 90%;
+        /* Adjust as needed */
+        max-height: 80%;
+        /* Adjust as needed to fit within the grid item */
+        display: block;
+      }
+
+      .item1 {
+        grid-column: 1 / span 2;
+        /* Span across 2 columns */
+        grid-row: 1/span 2;
+        background-image: url('item1.png');
+        /* Replace with actual image path */
+      }
+
+      .item2 {
+        grid-column: 3 / span 2;
+        grid-row: 1/ span 2;
+        background-image: url('item2.png');
+        /* Replace with actual image path */
+      }
+
+      .item3 {
+        grid-column: 3 / span 2;
+        grid-row: 3 / span 2;
+        background-image: url('item3.png');
+        /* Replace with actual image path */
+      }
+
+      .item4 {
+        grid-column: 1;
+        grid-row: 3 / span 2;
+        background-image: url('item4.png');
+        /* Replace with actual image path */
+      }
+
+      .item5 {
+        grid-column: 2;
+        grid-row: 3 / span 2;
+        background-image: url('item5.png');
+        /* Replace with actual image path */
+      }
+
+      .item6 {
+        grid-column: 1 / span 2;
+        grid-row: 5/ span 2;
+        background-image: url('item6.png');
+        /* Replace with actual image path */
+      }
+
+      .item7 {
+        grid-column: 3 / span 2;
+        grid-row: 5/ span 2;
+        background-image: url('item7.png');
+        /* Replace with actual image path */
+      }
+
+      /* @media screen and (min-width:320px) {
+        .gallery-img {
+          display: inline;
+          height: 30%;
+          margin-top: 20%;
+        }
+
+        .text-img {
+          display: inline;
+          height: 5%;
+        }
+
+        .submenu {
+          display: inline;
+          width: 40%;
+          margin-top: 10%;
+        }
+      } */
+  </style>
+</head>
+
+<body>
+
+
+  <div class="grid-container">
+    <div class="grid-item item1"></div>
+    <div class="grid-item item2"></div>
+    <div class="grid-item item3">
+      <img class="gallery-img" src="Gallery.png" alt="Gallery-img">
+      <img class="text-img" src="/qazwsxedcrfvtgbyhnujmikolp1234567890.png" alt="text">
+      <img class="submenu" src="submenu.png" alt="submenu">
+    </div>
+    <div class="grid-item item4"></div>
+    <div class="grid-item item5"></div>
+    <div class="grid-item item6"></div>
+    <div class="grid-item item7"></div>
+  </div>
+
+</body>
+
+</html>
