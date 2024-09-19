@@ -24,6 +24,23 @@
             padding: 5px;
         }
 
+        .gallery-code {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .view-all {
+            color: #ffca28;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #d4a017;
+        }
+
         .grid-item {
             position: relative;
             overflow: hidden;
@@ -32,6 +49,11 @@
             opacity: 0;
             transform: scale(0.9);
             animation: scaleFade 0.5s ease-out forwards;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.1);
+            /* Zoom effect on hover */
         }
 
         .item1 {
@@ -69,13 +91,14 @@
             animation-delay: 0.7s;
         }
 
+        /* 
         .gallery-img,
         .text-img,
         .submenu {
             max-width: 100%;
             height: auto;
             display: block;
-        }
+        } */
 
         @keyframes scaleFade {
             to {
@@ -89,6 +112,41 @@
             .grid-container {
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: repeat(2, 1fr);
+            }
+
+            .gallery-title {
+                font-family: 'Niagara Solid', sans-serif;
+                /* Use Niagara Solid font */
+                font-size: 150px;
+                /* Specific size */
+                font-weight: 400;
+                /* Font weight */
+                line-height: 160.62px;
+                /* Line height */
+                color: #e53935;
+                /* Red text color */
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .gallery-code {
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                color: #ccc;
+                margin-bottom: 20px;
+            }
+
+            /* Text section on the right side of the top gallery */
+            .gallery-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                width: 100%;
+                /* Takes 35% of the width */
+                padding-left: 20px;
+                text-align: left;
             }
 
             .item1 {
@@ -185,13 +243,13 @@
             .item4 {
                 grid-column: 1;
                 grid-row: 3 / span 2;
-                grid-row: 3/ span 4;
+                grid-row: 3/ span 2;
             }
 
             .item5 {
                 grid-column: 2;
                 grid-row: 3 / span 2;
-                grid-row: 3/ span 4;
+                grid-row: 3/ span 2;
             }
 
             .item6 {
@@ -204,14 +262,60 @@
                 grid-row: 5/ span 2;
             }
 
-            .gallery-img,
+            /* Adjust the gallery-info to take up full available space */
+            .gallery-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                width: 100%;
+                height: 100%;
+                padding-left: 20px;
+                text-align: left;
+                box-sizing: border-box;
+
+                grid-column: 3 / span 2;
+                /* Span across all 4 columns */
+                grid-row: 3 / span 2;
+                /* Span across two rows */
+            }
+
+
+            .gallery-title {
+                font-family: 'Niagara Solid', sans-serif;
+                /* Use Niagara Solid font */
+                font-size: 70px;
+                /* Specific size */
+                /* Font weight */
+                display: block;
+                line-height: 160.62px;
+                /* Line height */
+                color: #e53935;
+                /* Red text color */
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .gallery-code {
+                display: flex;
+                flex-direction: column;
+                /* Stack items vertically */
+                text-align: center;
+                word-break: break-word;
+                /* Break long words */
+                margin: 0 auto;
+                /* Center the content */
+            }
+
+
+            /* .gallery-img,
             .text-img,
             .submenu {
                 max-width: 90%;
                 margin: 10px auto;
-            }
+            } */
 
-            .gallery-img {
+            /* .gallery-img {
                 height: 40%;
             }
 
@@ -221,6 +325,24 @@
 
             .submenu {
                 width: 50%;
+            } */
+        }
+
+        @media screen and (max-width:425px) {
+
+            .gallery-title {
+                font-family: 'Niagara Solid', sans-serif;
+                /* Use Niagara Solid font */
+                font-size: 50px;
+                /* Specific size */
+                /* Font weight */
+                display: block;
+                line-height: 160.62px;
+                /* Line height */
+                color: #e53935;
+                /* Red text color */
+                margin-bottom: 10px;
+                text-transform: uppercase;
             }
         }
 
@@ -245,10 +367,11 @@
     <div class="grid-container">
         <div class="grid-item item1"></div>
         <div class="grid-item item2"></div>
-        <div class="grid-item item3">
-            <img class="gallery-img" src="Gallery.png" alt="Gallery-img">
-            <img class="text-img" src="qazwsxedcrfvtgbyhnujmikolp1234567890.png" alt="text">
-            <img class="submenu" src="submenu.png" alt="submenu">
+        <!-- Text section on the right -->
+        <div class="gallery-info">
+            <h1 class="gallery-title">Gallery</h1>
+            <p class="gallery-code">qazwsxedcrfvtgbyhnujmikolp1234567890</p>
+            <a href="#" class="view-all">View All &gt;</a>
         </div>
         <div class="grid-item item4"></div>
         <div class="grid-item item5"></div>
